@@ -1,7 +1,7 @@
 <div>
     {{#each items}}
     <h2>name: {{name}}</h2>
-    <button> View Album</button>
+    <a href="/albums/:id">View Albums</a>
     {{#each images}}
     <img src="{{url}}" alt="{{name}}">
     {{/each}}

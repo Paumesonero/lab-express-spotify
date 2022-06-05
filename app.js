@@ -35,10 +35,24 @@ app.get('/artist-search', (req, res) => {
     spotifyApi
         .searchArtists(`${artist}`)
         .then(data => {
-            res.render('artist-search-results', data.body.artists)
-            console.log('the recieved data from api :', data.body.artists.items)
+            let artistFound = res.render('artist-search-results', data.body.artists)
+            //console.log('the recieved data from api :', data.body.artists.items[0].images)
+            return artistFound
         })
         .catch(err => console.log('errrrrroooooooor', err))
+})
+
+
+app.get('/albums/:id', (req, res) => {
+    const { id } = req.params;
+    spotifyApi
+        .getArtistAlbums('id')
+        .then(data => {
+            console.log('Artist albums', data.body)
+            res.render('albums', data.body)
+        })
+        .catch(err => console.log('errrrrroooooooor', err))
+
 })
 
 app.listen(3000, () => console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊'));
