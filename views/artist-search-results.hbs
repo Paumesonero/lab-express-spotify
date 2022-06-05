@@ -1,0 +1,9 @@
+<div>
+    {{#each items}}
+    <h2>name: {{name}}</h2>
+    <button> View Album</button>
+    {{#each images}}
+    <img src="{{url}}" alt="{{name}}">
+    {{/each}}
+    {{/each}}
+</div>
