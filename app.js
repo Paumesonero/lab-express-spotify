@@ -42,17 +42,37 @@ app.get('/artist-search', (req, res) => {
         .catch(err => console.log('errrrrroooooooor', err))
 })
 
+// app.get('/albums/:id', (req, res) => {
+//     // .getArtistAlbums() code goes here
+//     spotifyApi
+//         .getArtistAlbums(req.params.id)
+//         .then(data => {
+//             res.render('albums', data.body)
+//         })
+//         .catch(err => console.log("The error is....", err))
+// })
+
 
 app.get('/albums/:id', (req, res) => {
     const { id } = req.params;
     spotifyApi
-        .getArtistAlbums('id')
+        .getArtistAlbums(id)
         .then(data => {
             console.log('Artist albums', data.body)
             res.render('albums', data.body)
         })
         .catch(err => console.log('errrrrroooooooor', err))
 
+})
+
+app.get('/tracks/:id', (req, res) => {
+    const { id } = req.params;
+    spotifyApi
+        .getAlbumTracks(id)
+        .then(data => {
+            res.render('tracks', data.body)
+        })
+        .catch(err => console.log('audio error', err))
 })
 
 app.listen(3000, () => console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊'));

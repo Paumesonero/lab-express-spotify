@@ -1,9 +1,10 @@
 <div>
     {{#each items}}
     <h2>name: {{name}}</h2>
-    <a href="/albums/:id">View Albums</a>
+
     {{#each images}}
     <img src="{{url}}" alt="{{name}}">
     {{/each}}
+    <a href="/albums/{{id}}">View Albums</a>
     {{/each}}
 </div>
