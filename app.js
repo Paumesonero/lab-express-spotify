@@ -36,29 +36,18 @@ app.get('/artist-search', (req, res) => {
         .searchArtists(`${artist}`)
         .then(data => {
             let artistFound = res.render('artist-search-results', data.body.artists)
-            //console.log('the recieved data from api :', data.body.artists.items[0].images)
+            console.log('the recieved data from api :', data.body.artists.items)
             return artistFound
         })
         .catch(err => console.log('errrrrroooooooor', err))
 })
-
-// app.get('/albums/:id', (req, res) => {
-//     // .getArtistAlbums() code goes here
-//     spotifyApi
-//         .getArtistAlbums(req.params.id)
-//         .then(data => {
-//             res.render('albums', data.body)
-//         })
-//         .catch(err => console.log("The error is....", err))
-// })
-
 
 app.get('/albums/:id', (req, res) => {
     const { id } = req.params;
     spotifyApi
         .getArtistAlbums(id)
         .then(data => {
-            console.log('Artist albums', data.body)
+            //console.log('Artist albums', data.body)
             res.render('albums', data.body)
         })
         .catch(err => console.log('errrrrroooooooor', err))

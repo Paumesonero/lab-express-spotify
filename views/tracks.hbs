@@ -1,20 +1,25 @@
-<ul>
-    {{#each items}}
-    <li>
-        <h3>{{name}}</h3>
-        {{#if preview_url}}
+<div class="tracks-ul-container">
+    <div class="title-listen-container">
+        <h2>Title</h2>
+        <h2>Listen</h2>
+    </div>
+    <ul class="tracks-container">
+        {{#each items}}
+        <li class="track-title-controlls">
+            <h5>{{name}}</h5>
+            {{#if preview_url}}
 
-        <figure>
-            <figcaption>Listen to the T-Rex:</figcaption>
-            <audio controls src="{{preview_url}}">
-                Your browser does not support the
-                <code>audio</code> element.
-            </audio>
-        </figure>
+            <figure>
+                <audio controls src="{{preview_url}}">
+                    Your browser does not support the
+                    <code>audio</code> element.
+                </audio>
+            </figure>
 
-        {{else}}
-        <p>no audio available sorry</p>
-        {{/if}}
-    </li>
-    {{/each}}
-</ul>
+            {{else}}
+            <p>no audio available sorry</p>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ul>
+</div>

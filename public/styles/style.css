@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+/* artist search form  */
+
+.form-container {
+    background-image: url('../images/spotify-background.jpeg');
+    background-size: cover;
+    height: 825px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-start-page {
+    background-color: rgba(214, 206, 207, 0.5);
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 30%;
+}
+
+.form-start-page input {
+    width: 80%;
+    height: 25px;
+    border: none;
+}
+
+.form-start-page button {
+    height: 25px;
+    background-color: rgb(233, 113, 104);
+    color: white;
+    border: none;
+}
+
+/* Artist search results*/
+
+.artist-result-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 30px;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.artist-display {
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.artist-display img {
+    width: 300px;
+    height: 300px;
+}
+
+.artis-name-bottom {
+    background-color: rgb(77, 77, 77);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.artis-name-bottom h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: white;
+    height: 50%;
+}
+
+.artis-name-bottom a {
+    margin-bottom: 10px;
+    text-decoration: none;
+    border: 1px solid rgb(233, 113, 104);
+    padding: 5px 8px;
+    background-color: rgb(233, 113, 104);
+    color: white;
+    border-radius: 5px;
+
+}
+
+.albums-container {
+    background-color: black;
+}
+
+#albums-title {
+    text-align: center;
+}
+
+/* Tracks styles*/
+
+.track-title-controlls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(247, 246, 246);
+    border: 2px solid white;
+    align-items: center;
+}
+
+.track-title-controlls h5 {
+    font-size: 1.3rem;
+    margin-left: 15px;
+}
+
+.tracks-container {
+    width: 90%;
+    padding: 0;
+    margin-top: 1px;
+
+}
+
+.tracks-ul-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title-listen-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(74, 74, 74);
+}
+
+.title-listen-container h2 {
+    margin-left: 30px;
+    margin-right: 30px;
+    color: white;
+}
